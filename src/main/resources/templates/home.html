@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <table cellpadding="10px">
+        <thead>
+            <th>ID</th>
+            <th>User Name</th>
+            <th>Course Name</th>
+            <th>Commentary</th>
+            <th>Phone</th>
+            <th>Handled</th>
+        </thead>
+        <tbody>
+            <tr th:each="applicationRequest : ${applicationRequests}">
+                <td th:text="${applicationRequest.id}"></td>
+                <td th:text="${applicationRequest.userName}"></td>
+                <td th:text="${applicationRequest.courseName}"></td>
+                <td th:text="${applicationRequest.commentary}"></td>
+                <td th:text="${applicationRequest.phone}"></td>
+                <td th:text="${applicationRequest.handled}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
