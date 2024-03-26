@@ -14,4 +14,21 @@ public class ApplicationRequestService {
     public List<ApplicationRequest> getSortedRequests() {
         return applicationRequestRepository.findAll();
     }
+
+    public ApplicationRequest addApplicationRequest(ApplicationRequest applicationRequest) {
+       return applicationRequestRepository.save(applicationRequest);
+    }
+
+    public ApplicationRequest getRequestById(Long id) {
+        return applicationRequestRepository.findById(id).orElse(null);
+    }
+
+    public ApplicationRequest editRequest(ApplicationRequest applicationRequest) {
+        return applicationRequestRepository.save(applicationRequest);
+    }
+
+    public void deleteRequestById(Long id) {
+        applicationRequestRepository.deleteById(id);
+    }
 }
+

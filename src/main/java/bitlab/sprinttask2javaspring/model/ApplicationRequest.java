@@ -28,6 +28,6 @@ public class ApplicationRequest {
     @Column(name = "phone")
     private String phone;
 
-    @Column(name = "handled")
-    private Boolean handled;
+    @Column(name = "handled", columnDefinition = "BOOLEAN DEFAULT false")
+    private boolean handled;
 }

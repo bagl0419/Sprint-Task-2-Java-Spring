@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <input th:value="${applicationRequest.id}" type="hidden" name="id">
+    <input th:value="${applicationRequest.handled}" type="hidden" name="handled">
+    User Name:
+    <input th:value="${applicationRequest.userName}" type="text" name="userName">
+    Course Name:
+    <input th:value="${applicationRequest.courseName}" type="text" name="courseName">
+    Commentary:
+    <input th:value="${applicationRequest.commentary}" type="text" name="commentary">
+    Phone:
+    <input th:value="${applicationRequest.phone}" type="text" name="phone">
+    <form action="/request/edit" method="post" th:if="${not applicationRequest.handled}">
+        <button type="submit">HANDLE REQUEST</button>
+    </form>
+    <form action="/request/delete/${applicationRequest.id}" method="post">
+        <input type="submit" value="DELETE REQUEST">
+    </form>
+</body>
+</html>

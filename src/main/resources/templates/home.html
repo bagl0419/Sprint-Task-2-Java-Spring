@@ -5,6 +5,17 @@
     <title>Title</title>
 </head>
 <body>
+    <form action="/request/add" method="post">
+        User Name:
+        <input type="text" name="userName">
+        Course Name:
+        <input type="text" name="courseName">
+        Commentary:
+        <input type="text" name="commentary">
+        Phone:
+        <input type="text" name="phone">
+        <button>ADD REQUEST</button>
+    </form>
     <table cellpadding="10px">
         <thead>
             <th>ID</th>
@@ -13,6 +24,7 @@
             <th>Commentary</th>
             <th>Phone</th>
             <th>Handled</th>
+            <th>Details</th>
         </thead>
         <tbody>
             <tr th:each="applicationRequest : ${applicationRequests}">
@@ -22,6 +34,7 @@
                 <td th:text="${applicationRequest.commentary}"></td>
                 <td th:text="${applicationRequest.phone}"></td>
                 <td th:text="${applicationRequest.handled}"></td>
+                <td><a th:href="${'/request/' + applicationRequest.getId()}">Details</a></td>
             </tr>
         </tbody>
     </table>
